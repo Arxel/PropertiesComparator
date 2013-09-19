@@ -22,9 +22,8 @@ public class CreateDataFromString {
 	private Data createDataFromString(String stringData) {
 		String[] temp = stringData.split("=");
 		String[] tableOfStrings = temp[0].split("\\.");
-		Data data;
+		Data data = null;
 		if (tableOfStrings.length == 3) {
-			// jezeli tableofstring[2] istnieje to dodaj 3, jak nie to null
 			data = new Data(tableOfStrings[0], tableOfStrings[1],
 					tableOfStrings[2], "");
 		} else if (tableOfStrings.length == 2) {
