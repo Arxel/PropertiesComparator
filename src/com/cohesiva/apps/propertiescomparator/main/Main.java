@@ -1,0 +1,14 @@
+package com.cohesiva.apps.propertiescomparator.main;
+
+public class Main {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		DataInputImpl dii = new DataInputImpl();
+	
+
+	}
+
+}
