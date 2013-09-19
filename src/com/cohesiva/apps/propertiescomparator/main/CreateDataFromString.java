@@ -6,25 +6,30 @@ import java.util.List;
 
 public class CreateDataFromString {
 
-	public static List<Data> createListOfData(List<String> data) {
-		data = new ArrayList<String>();
+	public List<Data> createListOfData(List<String> data) {
+		// data = new ArrayList<String>();
 		List<Data> separetedData = new ArrayList<Data>();
 		Iterator<String> iterator = data.iterator();
 		while (iterator.hasNext()) {
 			String temp = iterator.next();
-			if (!iterator.next().equals("")) {
+			if (!temp.equals("")) {
 				separetedData.add(createDataFromString(temp));
 			}
 		}
 		return separetedData;
 	}
 
-	private static Data createDataFromString(String stringData) {
-		String[] tableOfStrings = new String[3];
+	private Data createDataFromString(String stringData) {
 		String[] temp = stringData.split("=");
-		tableOfStrings = temp[0].split(".");
-		Data data = new Data(tableOfStrings[0], tableOfStrings[1],
-				tableOfStrings[2]);
+		String[] tableOfStrings = temp[0].split("\\.");
+		Data data;
+		if (tableOfStrings.length > 2) {
+			// jezeli tableofstring[2] istnieje to dodaj 3, jak nie to null
+			data = new Data(tableOfStrings[0], tableOfStrings[1],
+					tableOfStrings[2]);
+		} else {
+			data = new Data(tableOfStrings[0], tableOfStrings[1], "");
+		}
 		return data;
 	}
 }

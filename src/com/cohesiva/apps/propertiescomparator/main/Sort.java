@@ -1,29 +1,14 @@
 package com.cohesiva.apps.propertiescomparator.main;
 
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
 public class Sort {
 
-	private ArrayList<Data> datasList;
+	public void SortData(List<Data> objectsList) {
+		Collections.sort(objectsList, new DataComparator());
 
-	public Sort(ArrayList<Data> DatasList) {
-		this.datasList = DatasList;
-	}
-
-	public List<Data> SortData(Data[] objectsList) {
-		importData(objectsList);
-		Collections.sort(datasList, new DataComparator());
-		return datasList;
-
-	}
-
-	protected void importData(Data[] objectsList) {
-		for (int i = 0; i < objectsList.length; i++) {
-			this.datasList.add(objectsList[i]);
-		}
 	}
 
 	private class DataComparator implements Comparator<Data> {

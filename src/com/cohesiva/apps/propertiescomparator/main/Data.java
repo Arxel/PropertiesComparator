@@ -12,4 +12,8 @@ public class Data {
 		this.thirdField = thirdField;
 	}
 
+	public String toString() {
+		return firstField + "." + secondField + "." + thirdField;
+	}
+
 }
