@@ -1,0 +1,15 @@
+Main ignore file, just for sake.
+
+*.class
+
+#eclipse files
+.classpath
+.project
+.settings
+
+# /gen/ & /bin/
+PropertiesComparator/bin/*
+
+# properties files
+
+*.properties
