@@ -4,40 +4,27 @@ import static org.junit.Assert.*;
 
 import java.util.Arrays;
 import java.util.List;
-
-import org.junit.After;
-import org.junit.Before;
 import org.junit.Test;
-import org.junit.rules.ExpectedException;
-
 import com.cohesiva.apps.propertiescomparator.main.DataInputImpl;
-import com.sun.istack.internal.NotNull;
 
 public class DataInputImplTest {
-	private static final String[] TABLE = { "Siema" };
+	private static final String STRING_FILENAME_FILE = "file";
+	private static final String STRING_SIEMA = "siema";
 	DataInputImpl dii = new DataInputImpl();
-
-	@Before
-	public void setUp() throws Exception {
-	}
-
-	@After
-	public void tearDown() throws Exception {
-	}
 
 	@Test
 	public void setUpTest() throws Exception {
-		dii.setUp("file");
+		dii.setUpFile(STRING_FILENAME_FILE);
 	}
 
 	@Test
 	public void loadTest() throws Exception {
-		List<String> expected = Arrays.asList("siema");
+		List<String> expected = Arrays.asList(STRING_SIEMA);
 		try {
-			dii.setUp("file");
+			dii.setUpFile(STRING_FILENAME_FILE);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		assertEquals(expected, dii.load());
+		assertEquals(expected, dii.loadDataToList(STRING_FILENAME_FILE));
 	}
 }

@@ -11,7 +11,7 @@ public class DataInputImpl implements DataInput {
 	BufferedReader br;
 
 	@Override
-	public void setUp(String fileName) throws Exception {
+	public void setUpFile(String fileName) throws Exception {
 
 		try {
 			br = new BufferedReader(new FileReader(fileName + ".properties"));
@@ -23,21 +23,21 @@ public class DataInputImpl implements DataInput {
 	}
 
 	@Override
-	public List<String> load() throws Exception {
+	public List<String> loadDataToList(String fileName) throws Exception {
+		setUpFile(fileName);
 		try {
 			String line = br.readLine();
 
 			while (line != null) {
 				data.add(line);
-				
+
 				line = br.readLine();
 			}
-			
+
 			br.close();
 		} catch (Exception e) {
 			// e.printStackTrace();
 		}
 		return data;
 	}
-
 }
