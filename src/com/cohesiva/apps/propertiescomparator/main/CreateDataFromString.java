@@ -23,12 +23,15 @@ public class CreateDataFromString {
 		String[] temp = stringData.split("=");
 		String[] tableOfStrings = temp[0].split("\\.");
 		Data data;
-		if (tableOfStrings.length > 2) {
+		if (tableOfStrings.length == 3) {
 			// jezeli tableofstring[2] istnieje to dodaj 3, jak nie to null
 			data = new Data(tableOfStrings[0], tableOfStrings[1],
-					tableOfStrings[2]);
-		} else {
-			data = new Data(tableOfStrings[0], tableOfStrings[1], "");
+					tableOfStrings[2], "");
+		} else if (tableOfStrings.length == 2) {
+			data = new Data(tableOfStrings[0], tableOfStrings[1], "", "");
+		} else if (tableOfStrings.length == 4) {
+			data = new Data(tableOfStrings[0], tableOfStrings[1],
+					tableOfStrings[2], tableOfStrings[3]);
 		}
 		return data;
 	}
