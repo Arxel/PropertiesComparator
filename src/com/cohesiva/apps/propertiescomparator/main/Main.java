@@ -9,13 +9,23 @@ public class Main {
 		List<Data> referenceSeparetedData = new ArrayList<Data>();
 		List<Data> otherSeparetedData = new ArrayList<Data>();
 		DataInputImpl dii = new DataInputImpl();
-		 CreateDataFromString sdfs = new CreateDataFromString();
+		CreateDataFromString sdfs = new CreateDataFromString();
+		String referenceFileName = "messages";
+		String otherFileName = "messages_en_US";
+		analyseData(referenceSeparetedData, otherSeparetedData, dii, sdfs,
+				referenceFileName, otherFileName);
 
+	}
+
+	private static void analyseData(List<Data> referenceSeparetedData,
+			List<Data> otherSeparetedData, DataInputImpl dii,
+			CreateDataFromString sdfs, String referenceFileName,
+			String otherFileName) {
 		try {
-			List<String> list = dii.loadDataToList("messages");
+			List<String> list = dii.loadDataToList(referenceFileName);
 			referenceSeparetedData = sdfs.createListOfData(list);
 			otherSeparetedData = sdfs.createListOfData(dii
-					.loadDataToList("messages_en_US"));
+					.loadDataToList(otherFileName));
 
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -33,7 +43,6 @@ public class Main {
 
 		DataOutput dO = new DataOutput();
 		dO.displayDataOnScreen(finalOutputListWithDatas);
-
 	}
 
 }
