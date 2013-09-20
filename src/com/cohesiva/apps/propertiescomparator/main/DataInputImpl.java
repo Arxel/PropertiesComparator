@@ -24,6 +24,7 @@ public class DataInputImpl implements DataInput {
 
 	@Override
 	public List<String> loadDataToList(String fileName) throws Exception {
+		data.clear();
 		setUpFile(fileName);
 		try {
 			String line = br.readLine();
@@ -38,6 +39,7 @@ public class DataInputImpl implements DataInput {
 		} catch (Exception e) {
 			// e.printStackTrace();
 		}
+
 		return data;
 	}
 }

@@ -21,6 +21,8 @@ public class CompareProperties {
 						toCompareListOfDatas.get(j))) {
 					exist = true;
 				}
+				//to nie mozesz robic equals bo to sa rozne obiekty !
+				//tylko maja takie same dane w œrodku....
 			}
 			if (!exist) {
 				finalOutputListWithDatas.add(patternListOfDatas.get(i));
