@@ -30,8 +30,14 @@ public class Sort {
 						return 1;
 					else if (o1.thirdField.compareTo(o2.thirdField) < 0)
 						return -1;
-					else if (o1.thirdField.compareTo(o2.thirdField) == 0)
-						return 0;
+					else if (o1.thirdField.compareTo(o2.thirdField) == 0) {
+						if (o1.thirdField.compareTo(o2.fourthField) > 0)
+							return 1;
+						else if (o1.thirdField.compareTo(o2.fourthField) < 0)
+							return -1;
+						else if (o1.thirdField.compareTo(o2.fourthField) == 0)
+							return 0;
+					}
 				}
 			}
 

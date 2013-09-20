@@ -13,13 +13,17 @@ public class CompareProperties {
 
 	public List<Data> matchProperties(List<Data> patternListOfDatas,
 			List<Data> toCompareListOfDatas) {
+		boolean exist;
 		for (int i = 0; i < patternListOfDatas.size(); i++) {
+			exist = false;
 			for (int j = 0; j < toCompareListOfDatas.size(); j++) {
 				if (patternListOfDatas.get(i).equals(
 						toCompareListOfDatas.get(j))) {
-					break;
-				} else
-					finalOutputListWithDatas.add(patternListOfDatas.get(i));
+					exist = true;
+				}
+			}
+			if (!exist) {
+				finalOutputListWithDatas.add(patternListOfDatas.get(i));
 			}
 		}
 

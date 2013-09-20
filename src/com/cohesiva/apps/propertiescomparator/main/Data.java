@@ -16,8 +16,14 @@ public class Data {
 	}
 
 	public String toString() {
-		return firstField + "." + secondField + "." + thirdField + "."
-				+ fourthField; //TODO: if exist !!
+		if (thirdField.equals("")) {
+			return firstField + "." + secondField;
+		} else if (fourthField.equals("")) {
+			return firstField + "." + secondField + "." + thirdField;
+		} else {
+			return firstField + "." + secondField + "." + thirdField + "."
+					+ fourthField; // TODO: if exist !!
+		}
 	}
 
 }

@@ -5,7 +5,7 @@ import java.util.Iterator;
 import java.util.List;
 
 public class CreateDataFromString {
-
+	Data data;
 	public List<Data> createListOfData(List<String> data) {
 		// data = new ArrayList<String>();
 		List<Data> separetedData = new ArrayList<Data>();
@@ -22,7 +22,7 @@ public class CreateDataFromString {
 	private Data createDataFromString(String stringData) {
 		String[] temp = stringData.split("=");
 		String[] tableOfStrings = temp[0].split("\\.");
-		Data data = null;
+		
 		if (tableOfStrings.length == 3) {
 			data = new Data(tableOfStrings[0], tableOfStrings[1],
 					tableOfStrings[2], "");
@@ -31,6 +31,8 @@ public class CreateDataFromString {
 		} else if (tableOfStrings.length == 4) {
 			data = new Data(tableOfStrings[0], tableOfStrings[1],
 					tableOfStrings[2], tableOfStrings[3]);
+		}else{
+			
 		}
 		return data;
 	}
