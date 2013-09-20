@@ -50,11 +50,11 @@ public class CompareProperties {
 				else if (o1.thirdField.compareTo(o2.thirdField) < 0)
 					return false;
 				else if (o1.thirdField.compareTo(o2.thirdField) == 0) {
-					if (o1.thirdField.compareTo(o2.fourthField) > 0)
+					if (o1.fourthField.compareTo(o2.fourthField) > 0)
 						return false;
-					else if (o1.thirdField.compareTo(o2.fourthField) < 0)
+					else if (o1.fourthField.compareTo(o2.fourthField) < 0)
 						return false;
-					else if (o1.thirdField.compareTo(o2.fourthField) == 0)
+					else if (o1.fourthField.compareTo(o2.fourthField) == 0)
 						return true;
 				}
 			}

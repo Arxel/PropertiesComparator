@@ -12,10 +12,10 @@ public class Main {
 		 CreateDataFromString sdfs = new CreateDataFromString();
 
 		try {
-			List<String> list = dii.loadDataToList("file");
+			List<String> list = dii.loadDataToList("messages");
 			referenceSeparetedData = sdfs.createListOfData(list);
 			otherSeparetedData = sdfs.createListOfData(dii
-					.loadDataToList("file1"));
+					.loadDataToList("messages_en_US"));
 
 		} catch (Exception e) {
 			e.printStackTrace();
